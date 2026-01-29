@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pastebin Lite</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+        padding: 40px;
+      }
+      textarea,
+      input,
+      button {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 14px;
+      }
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .error {
+        color: #f87171;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pastebin Lite</h1>
+
+    <form method="post" action="/">
+      {% csrf_token %}
+
+      <label>Paste Content</label>
+      <textarea name="content" rows="10" required></textarea>
+
+      <label>TTL (seconds, optional)</label>
+      <input type="number" name="ttl_seconds" min="1" />
+
+      <label>Max Views (optional)</label>
+      <input type="number" name="max_views" min="1" />
+
+      <button type="submit">Create Paste</button>
+    </form>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+  </body>
+</html>
