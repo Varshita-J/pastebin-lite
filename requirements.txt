@@ -65,7 +65,6 @@ proglog==0.1.12
 prompt_toolkit==3.0.48
 psutil==6.1.0
 psycopg==3.3.2
-psycopg2==2.9.9
 psycopg2-binary==2.9.11
 pure_eval==0.2.3
 pycparser==2.21
