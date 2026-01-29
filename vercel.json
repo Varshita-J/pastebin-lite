@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "pastebin/wsgi.py"
+      "dest": "api/index.py"
     }
   ]
 }
